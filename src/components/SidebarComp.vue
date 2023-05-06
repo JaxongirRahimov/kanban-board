@@ -30,7 +30,7 @@
 </script>
 <template>
     <aside class="sidebar" :class="[isSmallScreen ?'sidebar__small-screen' : '', isMenuOpen ? 'sidebar__menu-open' : '', !isDarkMode ? 'sidebar__light-mode' : '']">
-        <button @click="isMenuOpen=!isMenuOpen" v-if="isSmallScreen" class="sidebar__menu-btn">
+        <button @click="isMenuOpen=!isMenuOpen" v-if="isSmallScreen" class="sidebar__menu-btn" :class="{'sidebar__menu-closed': !isMenuOpen}">
             <v-icon name="co-hamburger-menu"/>
         </button>
         <div v-if="!isSmallScreen || isMenuOpen" class="sidebar__box">
@@ -75,6 +75,7 @@
 .sidebar__light-mode .sidebar__menu-btn {
     color: #111;
 }
+
 .sidebar__small-screen {
     min-width: 80px;
     max-width: 80px;
@@ -106,6 +107,11 @@
     color: #fff;
     transform: scale(2);
     z-index: 9999;
+}
+.sidebar__menu-closed {
+    position: sticky;
+    top: 35px;
+    left: 30px;
 }
 .sidebar__header {
     margin-bottom: 25px;

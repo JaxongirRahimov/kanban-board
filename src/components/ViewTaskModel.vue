@@ -10,8 +10,6 @@
     const status = ref(props?.activeTask?.status);
 
     const tasks = useTaskStore();
-
-
      
     const handleSubtaskStatusChange = (subtaskId: string)=>{
         tasks.toggleSubtask(subtaskId, props.activeTask.id, props.activeBoard.id);
