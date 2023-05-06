@@ -58,7 +58,7 @@
                     </div>
                     <div class="subtasks__task-status-box">
                         <label for="status" class="subtasks__label">Status</label>
-                        <select id="status" @change="handleTaskStatusChange" class="subtasks__select" v-model="status" :value="activeTask.status">
+                        <select id="status" @change="handleTaskStatusChange" class="subtasks__select" v-model="status">
                             <option value="TODO">Todo</option>
                             <option value="DOING">Doing</option>
                             <option value="DONE">Done</option>
