@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type {IThemeMode} from "@/types/theme-mode";
 import {inject} from "vue";
 
-const {isDarkMode, toggleTheme} = inject("theme-mode");
+const {isDarkMode, toggleTheme} = inject("theme-mode") as IThemeMode;
 
 </script>
 <template>

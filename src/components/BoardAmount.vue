@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import type {IThemeMode} from "@/types/theme-mode";
 import {inject} from "vue";
 import { useBoardStore } from '@/stores/board';
 
 const board = useBoardStore();
 
-const {isDarkMode} = inject("theme-mode");
+const {isDarkMode} = inject("theme-mode") as IThemeMode;
 
 </script>
 <template>

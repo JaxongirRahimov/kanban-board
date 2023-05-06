@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TaskItem from "./TaskItem.vue"
+import type {IThemeMode} from "@/types/theme-mode";
 import {computed, inject} from "vue"
 
 const props = defineProps(["activeBoard", "getActiveTask", "toggleActiveTaskModel"])
@@ -13,7 +14,7 @@ const doing = computed(()=> currentActiveBoard.value.tasks.filter((task: any) =>
 const done = computed(()=> currentActiveBoard.value.tasks.filter((task: any) => task.status === "DONE").length)
  
 
-const {isDarkMode} = inject("theme-mode");
+const {isDarkMode} = inject("theme-mode") as IThemeMode;
 
 </script>
 <template>

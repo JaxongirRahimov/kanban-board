@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import {computed, inject} from "vue"
+    import type {IThemeMode} from "@/types/theme-mode";
     import type { ISubTask } from "@/types/task";
 
     const props = defineProps(["task", "getActiveTask", "toggleActiveTaskModel"])
@@ -12,7 +13,7 @@
         props.toggleActiveTaskModel();
     }
 
-    const {isDarkMode} = inject("theme-mode");
+    const {isDarkMode} = inject("theme-mode") as IThemeMode;
 
 </script>
 <template>

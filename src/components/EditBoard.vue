@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import {ref, computed, inject} from "vue"
+    import type {IThemeMode} from "@/types/theme-mode";
     import { useBoardStore } from "@/stores/board";
     
     const props = defineProps(["editBoardId", "getEditBoardId"])
@@ -38,7 +39,7 @@
         }
     }
 
-    const {isDarkMode} = inject("theme-mode");
+    const {isDarkMode} = inject("theme-mode") as IThemeMode;
 
 </script>
 <template>
