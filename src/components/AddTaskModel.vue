@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import {Form, Field, ErrorMessage, FieldArray} from "vee-validate";
 import {v4 as uuidv4} from "uuid";
-import {taskSchema} from "../validations/task";
+import {taskSchema} from "@/validations/task";
+import type {IThemeMode} from "@/types/theme-mode";
 import { useTaskStore } from "@/stores/task";
 import {inject} from "vue";
 
@@ -23,7 +24,7 @@ const handleAddTaskSubmit = (values: any, handleReset: any)=>{
     handleReset.resetForm()
 }
 
-const {isDarkMode} = inject("theme-mode");
+const {isDarkMode} = inject("theme-mode") as IThemeMode;
 
 </script>
 <template>

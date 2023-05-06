@@ -4,6 +4,7 @@
     import CreateBoard from './CreateBoard.vue';
     import EditBoard from './EditBoard.vue';
     import ThemeToggle from './ThemeToggle.vue';
+    import type {IThemeMode} from "../types/theme-mode"
     import { ref, onMounted, inject } from 'vue';
 
     defineProps(["getActiveBoard", "activeBoard", "resetBoard", "toggleDeleteModel", "getDeleteBoardId", "getEditBoardId", "editBoardId"])
@@ -24,7 +25,7 @@
         window.addEventListener("DOMContentLoaded", handleResize)
     });
 
-    const {isDarkMode} = inject("theme-mode");
+    const {isDarkMode} = inject("theme-mode") as IThemeMode;
     
 </script>
 <template>

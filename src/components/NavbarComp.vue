@@ -1,8 +1,9 @@
 <script setup lang="ts">
+    import type {IThemeMode} from "../types/theme-mode";
     import {inject} from "vue";
     defineProps(["activeBoard", "toggleAddTaskModel"]);
 
-    const {isDarkMode} = inject("theme-mode");
+    const {isDarkMode} = inject("theme-mode") as IThemeMode;
 </script>
 <template>
     <header class="header" :class="{'header__light-mode': !isDarkMode}">

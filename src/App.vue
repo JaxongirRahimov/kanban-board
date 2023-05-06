@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import NavbarComp from './components/NavbarComp.vue';
-import SidebarComp from './components/SidebarComp.vue';
-import TaskList from './components/TaskList.vue';
-import AddTaskModel from "./components/AddTaskModel.vue"
-import DeleteModal from './components/DeleteModal.vue';
-import ViewTaskModel from './components/ViewTaskModel.vue';
-import EditTaskModel from './components/EditTaskModel.vue';
+import NavbarComp from '@/components/NavbarComp.vue';
+import SidebarComp from '@/components/SidebarComp.vue';
+import TaskList from '@/components/TaskList.vue';
+import AddTaskModel from "@/components/AddTaskModel.vue"
+import DeleteModal from '@/components/DeleteModal.vue';
+import ViewTaskModel from '@/components/ViewTaskModel.vue';
+import EditTaskModel from '@/components/EditTaskModel.vue';
 
 import {ref, inject} from "vue";
-import type {IBoard} from "./types/board";
-import type { ITask } from './types/task';
-import {useModel} from "./composables/modal";
+import type {IBoard} from "@/types/board";
+import type { ITask } from '@/types/task';
+import {useModel} from "@/composables/modal";
+import type {IThemeMode} from "@/types/theme-mode";
 
 const activeBoard = ref({});
 const activeTask = ref({});
@@ -47,7 +48,8 @@ const removeActiveTask = ()=>{
   activeTask.value = {}
 }
 
-const {isDarkMode} = inject("theme-mode");
+
+const {isDarkMode} = inject("theme-mode") as IThemeMode;
 
 </script>
 

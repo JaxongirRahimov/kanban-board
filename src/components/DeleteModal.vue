@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type {IThemeMode} from "@/types/theme-mode";
 import { useBoardStore } from '@/stores/board';
 import {ref, computed, inject} from "vue"
 const props = defineProps(["isDeleteModelOpen", "toggleDeleteModel", "deleteBoardId", "removeActiveBoard"])
@@ -17,7 +18,7 @@ const handleDeleteBoardClick = ()=>{
     confirmationText.value = "";
 }
 
-const {isDarkMode} = inject("theme-mode");
+const {isDarkMode} = inject("theme-mode") as IThemeMode;
 
 </script>
 <template>
